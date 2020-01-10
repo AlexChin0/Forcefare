@@ -1,0 +1,7 @@
+package GameCore.ui;
+
+public interface ClickListener {
+  
+  public void onClick(); 
+  
+}
