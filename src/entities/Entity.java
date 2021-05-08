@@ -15,7 +15,7 @@ public abstract class Entity {
   public static final float DEFAULT_HEALTH = 100;//all default instance variables
   protected boolean alive = true;
   public boolean stunned = false, silenced = false;
-  protected boolean wasHurt = false; 
+  protected boolean wasHurt = false, wasHealed = false; 
   protected Rectangle bounds;
   protected boolean moved = false;
   public int playerNum;
@@ -365,7 +365,15 @@ public abstract class Entity {
   }
   
   public void setWasHurt(boolean wasHurt) {
-    this.wasHurt = wasHurt;
+	this.wasHurt = wasHurt;
+  }
+  
+  public boolean getWasHealed() {
+	return wasHealed;
+  }
+  
+  public void setWasHealed(boolean wasHealed) {
+	this.wasHealed = wasHealed;
   }
   
   public boolean isAlive(){

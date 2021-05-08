@@ -14,6 +14,7 @@ public class EntityManager {
 
   private Handler handler;
   private ArrayList<Entity> entities; //render priority check
+  private int pos = 0;
 
 
   public EntityManager(Handler handler){ //class constructor
@@ -52,7 +53,24 @@ public class EntityManager {
         if(e.getWasHurt()) {
             g.setFont(new Font("Consolas", Font.PLAIN, 25)); 
             g.setColor(Color.red);
-            g.drawString("" + (int)(e.getDeltaHealth()), (int)e.getX(), (int)e.getY());
+            g.drawString("" + (int)(e.getDeltaHealth()), (int)e.getX(), (int)e.getY() + pos);
+            pos-=2;
+            if (pos < -50) {
+            	pos = 0;
+            	e.setWasHurt(false);
+            }
+            
+        }
+        
+        if (e.getWasHealed()) {
+            g.setFont(new Font("Consolas", Font.PLAIN, 25)); 
+            g.setColor(Color.green);
+            g.drawString("" + (int)(e.getDeltaHealth()), (int)e.getX(), (int)e.getY() + pos);
+            pos-=2;
+            if (pos < -50) {
+            	pos = 0;
+            	e.setWasHealed(false);
+            }
         }
     }
   }

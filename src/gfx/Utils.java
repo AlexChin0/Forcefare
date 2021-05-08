@@ -2,6 +2,9 @@
 
 package gfx;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.io.*;
 
 final public class Utils {

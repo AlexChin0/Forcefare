@@ -130,15 +130,7 @@ public class Auror extends LiveEntity{
      neutral.index = 0;
     }
   }
-  
-//  public boolean checkCooldowns(int abNum){ //a method which returns true if the ability is usable
-//    if (abilities[abNum] == cooldowns[abNum] && !silenced){
-//      return true;
-//    }else{
-//      return false; 
-//    }
-//  }
-  
+
   @Override
   public void cancel(){
     System.out.println("Action cancelled");

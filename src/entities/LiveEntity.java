@@ -312,6 +312,10 @@ public void moveCheck(){
   @Override
   public void heal(float amt){
     health+= amt;
+    wasHealed = true;
+    
+    deltaHealth = amt;
+    
     if(health >= maxHealth){
       health = maxHealth;
     }
@@ -324,5 +328,6 @@ public void moveCheck(){
     if(protection >= 100){
       protection = 100;
     } 
+    System.out.println(amt + " Protection recieved. ");
   }
 }
